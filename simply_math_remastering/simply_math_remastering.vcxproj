@@ -111,6 +111,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\console_compiler.cpp" />
+    <ClCompile Include="..\src\data_bit.cpp" />
+    <ClCompile Include="..\src\data_list.cpp" />
+    <ClCompile Include="..\src\data_list_iterator.cpp" />
+    <ClCompile Include="..\src\main_handler.cpp" />
+    <ClCompile Include="..\src\MemWiz.cpp" />
+    <ClCompile Include="..\src\modules.cpp" />
+    <ClCompile Include="..\src\settings.cpp" />
+    <ClCompile Include="..\src\testing_and_loggingcpp.cpp" />
+    <ClCompile Include="console_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\headers\common.h" />
+    <ClInclude Include="..\headers\console_compiler.h" />
+    <ClInclude Include="..\headers\data_list.h" />
+    <ClInclude Include="..\headers\main_handler.h" />
+    <ClInclude Include="..\headers\MemWiz.h" />
+    <ClInclude Include="..\headers\modules.h" />
+    <ClInclude Include="..\headers\settings.h" />
+    <ClInclude Include="..\headers\smart_ptr.h" />
+    <ClInclude Include="..\headers\testing_and_logging.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

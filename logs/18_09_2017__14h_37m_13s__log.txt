@@ -1,0 +1,86 @@
+Test started at 18_09_2017__14h_37m_13s.
+Memory pool allocated at 00080000 from 1 try. Block ends at 00090000
+
+
+Default smart_ptr_weak constructor for class SimpleMathApp::data_list::_data_bit. 
+
+Default smart_ptr_weak constructor for class SimpleMathApp::data_list::_data_bit. 
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 0, size allocated: 64
+
+Default smart_ptr_weak constructor for class SimpleMathApp::data_list::_data_bit. 
+
+Default smart_ptr_weak constructor for class SimpleMathApp::data_list::_data_bit. 
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 64, size allocated: 64
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+New shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 128, size allocated: 64
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+Old shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+New shift is: 128. Real pointer is: 00080080. Reference count: 2
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+Old shift is: 0. Real pointer is: 00080000. Reference count: 1
+
+New shift is: 128. Real pointer is: 00080080. Reference count: 2
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+New shift is: 128. Real pointer is: 00080080. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 0
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 0, size allocated: 64
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+Old shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+New shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 0
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+New shift is: 0. Real pointer is: 00080000. Reference count: 1
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 64, size allocated: 64
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+Old shift is: 0. Real pointer is: 00080000. Reference count: 3
+
+New shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 0
+
+Old shift is: 128. Real pointer is: 00080080. (Dest)Reference count: 4294967295
+
+New shift is: 64. Real pointer is: 00080040. Reference count: 1
+
+Call smart_ptr_weak::operator= for class SimpleMathApp::data_list::_data_bit. 
+Old shift is: 128. Real pointer is: 00080080. Reference count: 4294967294
+
+New shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 0
+
+Memory pool deallocated at 00080000
+Amount of external references left: 4294967290
+Amount of reference table records used: 3
+Test ended at 18_09_2017__14h_37m_21s.
