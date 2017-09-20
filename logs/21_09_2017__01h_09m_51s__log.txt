@@ -1,0 +1,199 @@
+Test started at 21_09_2017__01h_09m_51s.
+Memory pool allocated at 00080000 from 1 try. Block ends at 00090000
+
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 0, size allocated: 64
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 64, size allocated: 64
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 128, size allocated: 64
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 3
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 192, size allocated: 64
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 192. Real pointer is: 000800C0. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 5
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 192. Real pointer is: 000800C0. Reference count: 2
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 256, size allocated: 64
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 256. Real pointer is: 00080100. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 192. Real pointer is: 000800C0. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 256. Real pointer is: 00080100. Reference count: 2
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 320, size allocated: 64
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 320. Real pointer is: 00080140. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 256. Real pointer is: 00080100. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 320. Real pointer is: 00080140. Reference count: 2
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 384, size allocated: 64
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 384. Real pointer is: 00080180. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 320. Real pointer is: 00080140. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 384. Real pointer is: 00080180. Reference count: 2
+
+From 2 files following data have been read:
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+2+2*2=
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 192. Real pointer is: 000800C0. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+f(x)=x^2-7*x+(x-1)
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 256. Real pointer is: 00080100. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+s=3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 320. Real pointer is: 00080140. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+3-5^7*0=
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 384. Real pointer is: 00080180. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+z(e)=0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 5
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 4
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 384. Real pointer is: 00080180. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 192. Real pointer is: 000800C0. Reference count: 1
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00080080. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 3
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00080000. Reference count: 2
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00080040. Reference count: 2

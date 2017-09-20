@@ -75,7 +75,7 @@ int SimpleMathApp::main_handler() {
 
 
 
-
+	SimpleMathApp::DeleteMathData();
 	MemoryControl::DestMemPool();
 	if (SimpleMathApp::TestLog::TEST()) {
 		SimpleMathApp::TestLog::SaveLogFile();

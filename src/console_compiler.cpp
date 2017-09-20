@@ -21,7 +21,7 @@ int SimpleMathApp::ReadMathDatafromMudules()
 	}
 	if (SimpleMathApp::TestLog::TEST()) {
 		data_iterator test_iter = MathData()->before_begin();		
-		SimpleMathApp::TestLog::LOG_STREAM() << std::endl <<"From 2 "<< test_count << " files following data have been read:" << std::endl;
+		SimpleMathApp::TestLog::LOG_STREAM() << std::endl <<"From "<< test_count << " files following data have been read:" << std::endl;
 		test_iter++;
 		while (test_iter != MathData()->end()) {
 			SimpleMathApp::TestLog::LOG_STREAM() << test_iter.get_in() << std::endl;

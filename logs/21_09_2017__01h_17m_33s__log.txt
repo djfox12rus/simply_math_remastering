@@ -1,0 +1,68 @@
+Test started at 21_09_2017__01h_17m_33s.
+Memory pool allocated at 00030000 from 1 try. Block ends at 00040000
+
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 0, size allocated: 64
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 64, size allocated: 64
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 128, size allocated: 64
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 192, size allocated: 64
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 256, size allocated: 64
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 320, size allocated: 64
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 384, size allocated: 64
+
+From 2 files following data have been read:
+2+2*2=
+f(x)=x^2-7*x+(x-1)
+s=3
+3-5^7*0=
+z(e)=0
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 0. Real pointer is: 00030000. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 128. Real pointer is: 00030080. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 192. Real pointer is: 000300C0. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 320. Real pointer is: 00030140. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 320. Real pointer is: 00030140. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 384. Real pointer is: 00030180. Reference count: 0
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 384. Real pointer is: 00030180. Reference count: 0
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00030040. Reference count: 0
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit. Shift is: 64. Real pointer is: 00030040. Reference count: 0
+
+Memory pool deallocated at 00030000
+Amount of external references left: 0
+Amount of reference table records used: 7
+Test ended at 21_09_2017__01h_17m_38s.

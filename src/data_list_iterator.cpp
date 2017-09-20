@@ -110,6 +110,11 @@ SimpleMathApp::data_list::iterator & SimpleMathApp::data_list::iterator::operato
 	return *this;
 }
 
+SimpleMathApp::data_list::_data_bit * SimpleMathApp::data_list::iterator::operator->()
+{
+	return letter.operator->();
+}
+
 
 bool SimpleMathApp::operator== (const SimpleMathApp::data_list::iterator& _left, const SimpleMathApp::data_list::iterator& _right) {	
 	//return (&_left == &_right)||(_left.this_data_list == _right.this_data_list && _left.letter.compare(&_right.letter));

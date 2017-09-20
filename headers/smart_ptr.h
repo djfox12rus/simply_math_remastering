@@ -53,17 +53,28 @@ namespace MemoryControl {
 		{
 			if (!this->is_nullptr()) {
 				if (s_ref->ref_count() > 1) {
-					s_ref->ref_count()--;					
+					s_ref->ref_count()--;	
+					/*if (SimpleMathApp::TestLog::TEST()) {
+						const std::type_info& r1 = typeid(T);
+						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
+						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Smart_ptr_weak destructor for " << r1.name() << ". Shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
+					}*/
 				}
 				else if (s_ref->ref_count() == 1) {
 					T* ptr = (T*)((int8_t*)MemPool()->block + (this->s_ref->shift()));
-					s_ref->ref_count()--;
+					s_ref->ref_count()--;					
 					ptr->~T();					
 					if (SimpleMathApp::TestLog::TEST()) {
 						const std::type_info& r1 = typeid(T);
 						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
 						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Smart_ptr_weak destructor for " << r1.name() << ". Shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
 					}
+				}
+			}
+			else {
+				if (SimpleMathApp::TestLog::TEST()) {
+					const std::type_info& r1 = typeid(T);					
+					SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "NULL/EXCESS Smart_ptr_weak destructor for " << r1.name() << "." << std::endl;
 				}
 			}
 		}

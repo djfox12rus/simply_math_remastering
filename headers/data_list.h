@@ -106,6 +106,8 @@ namespace SimpleMathApp {
 			iterator &operator-- (int);
 			//префиксный
 			iterator &operator-- ();
+			_data_bit* operator->();
+
 			friend bool operator== (const iterator& _left, const iterator& _right);
 			friend bool operator!= (const iterator& _left, const iterator& _right);
 

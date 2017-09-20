@@ -10,9 +10,13 @@ SimpleMathApp::data_list::data_list():length(), begin_bit(_data_bit()), top_bit(
 
 SimpleMathApp::data_list::~data_list()
 {
-	begin_bit.~smart_ptr_weak<_data_bit>();
-	top_bit.~smart_ptr_weak<_data_bit>();
-	end_bit.~smart_ptr_weak<_data_bit>();
+	//TODO:Разобраться с деструкторами списка/элементов списка/умных указателей. Их вызывается либо больше чем нужно, либо недостаточно. В данный момент - с перебором, зато надёжно)
+	iterator dest = this->before_begin();
+	while (dest != this->end()) {
+		dest->~_data_bit();
+		dest++;
+	}
+	//end_bit.~smart_ptr_weak();
 }
 
 size_t SimpleMathApp::data_list::size()
@@ -63,12 +67,12 @@ void SimpleMathApp::InitializeMathData()
 void SimpleMathApp::DeleteMathData()
 {
 	data_list* temp = MathData();
-	temp->~data_list();
+	delete temp;
 }
 
 void SimpleMathApp::ReinitializeMathData()
-{
-	DeleteMathData();
+{	
 	data_list* temp = MathData();
+	temp->~data_list();
 	temp = new(temp) data_list();
 }

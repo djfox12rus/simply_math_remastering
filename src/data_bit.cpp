@@ -27,6 +27,7 @@ SimpleMathApp::data_list::_data_bit::_data_bit(const _data_bit &_original) : lef
 
 SimpleMathApp::data_list::_data_bit::~_data_bit()
 {	
+	int a = 1;
 }
 
 int SimpleMathApp::data_list::_data_bit::compare_in(std::wstring &_original)
