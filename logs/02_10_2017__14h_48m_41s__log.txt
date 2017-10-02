@@ -1,0 +1,22 @@
+Test started at 02_10_2017__14h_48m_41s.
+Memory pool allocated at 00030000 from 1 try. Block ends at 00040000
+
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 0, size allocated: 76
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 76, size allocated: 76
+
+NULL/EXCESS Smart_ptr_weak destructor for class SimpleMathApp::data_list::_data_bit.
+
+Smart_ptr_weak constructor with arg for class SimpleMathApp::data_list::_data_bit. 
+Call for _memory_interface::allocate_mem(). Relative shift: 152, size allocated: 76
+
+tree_ptr constructor with arg for expression, size: 10
+Call for _memory_interface::allocate_mem(). Relative shift: 228, size allocated: 1000
+Call for _ref::alloc_more_count(...). Old size of counter array: 2

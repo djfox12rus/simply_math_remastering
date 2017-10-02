@@ -9,14 +9,11 @@ SimpleMathApp::data_list::data_list():length(), begin_bit(_data_bit()), top_bit(
 
 
 SimpleMathApp::data_list::~data_list()
-{
-	//TODO:Разобраться с деструкторами списка/элементов списка/умных указателей. Их вызывается либо больше чем нужно, либо недостаточно. В данный момент - с перебором, зато надёжно)
+{	
 	iterator dest = this->before_begin();
-	while (dest != this->end()) {
-		dest->~_data_bit();
-		dest++;
-	}
-	//end_bit.~smart_ptr_weak();
+	this->delete_after(dest);
+	this->begin_bit->right = smart_ptr_weak<_data_bit>();
+	this->end_bit->left = smart_ptr_weak<_data_bit>();	
 }
 
 size_t SimpleMathApp::data_list::size()
@@ -32,8 +29,9 @@ void SimpleMathApp::data_list::push_back(std::wstring & _in)
 	if (length == 0) {
 		top_bit = end_bit->left;
 	}
-	length++;
-	//TODO: build here!
+	length++;	
+	before_end = before_end->right;
+	before_end->build_handler();	
 }
 
 void SimpleMathApp::data_list::push_left(/*Core::tree_ptr& pointer*/)
@@ -42,6 +40,29 @@ void SimpleMathApp::data_list::push_left(/*Core::tree_ptr& pointer*/)
 	begin_bit->right = smart_ptr_weak<_data_bit>(_data_bit(begin_bit, after_begin));
 	after_begin->left = begin_bit->right;
 }
+
+void SimpleMathApp::data_list::delete_after(const iterator &_place)
+{
+	size_t len = 0;
+	iterator it = _place;
+	iterator it_end = this->end();
+	iterator it_top = this->top();
+	smart_ptr_weak<_data_bit> letter_ptr = it;
+	while (++it != it_end) {
+		letter_ptr->right = smart_ptr_weak<_data_bit>();
+		if (it == it_top) {
+			this->top_bit = smart_ptr_weak<_data_bit>();
+		}
+		letter_ptr = it;
+		len++;
+	}//it == it_end; letter_ptr == it_end--;
+	it--;
+	it->right = smart_ptr_weak<_data_bit>();
+	it_end->left = smart_ptr_weak<_data_bit>();
+	it_end->left = _place.letter;
+	_place->right = it_end.letter;
+	length -= len;
+}//после этого всё должно автоматом удалиться
 
 SimpleMathApp::data_list::iterator SimpleMathApp::data_list::before_begin()
 {

@@ -8,13 +8,17 @@ int SimpleMathApp::ReadMathDatafromMudules()
 	wchar_t wline[256];//TODO:длина строки 256 символов, сделать разумнее
 	data_iterator iter = MathData()->before_begin();	
 	uint32_t test_count = 0;	
+	std::wstring in;
 		
 	while (mod_list.GetNextModuleToRead(mod_file)) {
 		no_files_read = false;			
 		while (!mod_file.eof()) {
-			mod_file.getline(wline, 256);			
-			iter.emplace_after(std::wstring(wline));		
-			iter++;			
+			mod_file.getline(wline, 256);	
+			in = std::wstring(wline);
+			if (!in.empty()) {
+				iter.emplace_after(in);
+				iter++;
+			}
 		}
 		test_count++;
 		
@@ -34,10 +38,18 @@ int SimpleMathApp::ReadMathDatafromMudules()
 
 int SimpleMathApp::ProcessMathData()
 {
+	data_iterator iter = MathData()->top();
+	data_iterator end = MathData()->end();
+	std::wstring str;
+	while (iter != end) {
+		str = iter->get_obj_formal_entry();
+		iter++;
+	}
+
 	return 0;
 }
 
-int SimpleMathApp::ReturnResultintoFile()
+int SimpleMathApp::ReturnResultFile()
 {
 	return 0;
 }

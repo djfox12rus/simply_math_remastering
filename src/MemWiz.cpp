@@ -278,11 +278,14 @@ namespace MemoryControl {
 	{
 		int try_count = 0;
 		do {
+			//arr_count = (uint32_t*)new uint32_t[2];
 			arr_count = (uint32_t*)calloc(size, sizeof(uint32_t));
-			if (arr_count) break;
+			if (arr_count) { 
+				temp_count = &arr_count[1];
+				break;
+			}
 			try_count++;
-		} while (!arr_count&&try_count<5);
-		temp_count = &arr_count[1];
+		} while (!arr_count&&try_count<5);		
 	}
 
 	_ref * _ref::get_ref_ptr()
@@ -318,6 +321,7 @@ namespace MemoryControl {
 
 	_ref::~_ref()
 	{
+		//delete[]arr_count;
 		free(arr_count);
 	}
 
@@ -334,14 +338,16 @@ namespace MemoryControl {
 
 	void _ref::alloc_more_count(uint16_t _plus)throw(...)
 	{		
-		if (SimpleMathApp::TestLog::TEST()) {
+		/*if (SimpleMathApp::TestLog::TEST()) {
 			SimpleMathApp::TestLog::LOG_STREAM() << "Call for _ref::alloc_more_count(...). Old size of counter array: " << size << std::endl;
-		}
+		}*/
 		uint16_t new_size = size + _plus;
 		int try_count = 0;
 		uint32_t* new_count = nullptr;
 		do {
-			new_count = (uint32_t*)realloc(arr_count, new_size);
+			//new_count = (uint32_t*)new uint32_t[new_size];
+			new_count = (uint32_t*)calloc(new_size, sizeof(uint32_t));
+			if (new_count) break;
 			try_count++;
 		} while (!new_count&&try_count<5);
 		if (!new_count) {
@@ -350,13 +356,16 @@ namespace MemoryControl {
 			}
 			throw std::bad_alloc();
 		}
-		for (uint16_t i = size; i < new_size; i++)
-			new_count[i] = 0;
+		for (uint16_t i = 0; i < size; i++)
+			new_count[i] = arr_count[i];
 		size = new_size;
+		//delete[] arr_count;
+		free(arr_count);
 		arr_count = new_count;
-		if (SimpleMathApp::TestLog::TEST()) {
+		temp_count = &arr_count[1];
+		/*if (SimpleMathApp::TestLog::TEST()) {
 			SimpleMathApp::TestLog::LOG_STREAM() << "New size of counter array: " << new_size << std::endl;
-		}
+		}*/
 	}
 
 	uint16_t _ref::find_zero_count()

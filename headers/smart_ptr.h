@@ -15,20 +15,12 @@ namespace MemoryControl {
 	public:
 		//Конструктор по умолчанию. 
 		smart_ptr_weak() :s_ref(nullptr)
-		{
-			/*if (SimpleMathApp::TestLog::TEST()) {
-				const std::type_info& r1 = typeid(T);
-				SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Default smart_ptr_weak constructor for " << r1.name()<<". " << std::endl;
-			}	*/		
+		{				
 		}
 		/*Конструктор, принимающий в качестве параметра объект для размещения в памяти. !Обязательно требуется конструктор копирования для Т класса (с const ссылкой!)! 
 		*/
 		smart_ptr_weak(T& _obj) : s_ref(nullptr)
-		{
-			if (SimpleMathApp::TestLog::TEST()) {
-				const std::type_info& r1 = typeid(T);
-				SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Smart_ptr_weak constructor with arg for " << r1.name() << ". ";
-			}
+		{			
 			s_ref = MemPool()->allocate_mem(sizeof(T));
 			void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
 			T* virt_ptr = new (temp_ptr) T(_obj);			
@@ -53,12 +45,7 @@ namespace MemoryControl {
 		{
 			if (!this->is_nullptr()) {
 				if (s_ref->ref_count() > 1) {
-					s_ref->ref_count()--;	
-					/*if (SimpleMathApp::TestLog::TEST()) {
-						const std::type_info& r1 = typeid(T);
-						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
-						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Smart_ptr_weak destructor for " << r1.name() << ". Shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
-					}*/
+					s_ref->ref_count()--;						
 				}
 				else if (s_ref->ref_count() == 1) {
 					T* ptr = (T*)((int8_t*)MemPool()->block + (this->s_ref->shift()));
@@ -70,13 +57,7 @@ namespace MemoryControl {
 						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Smart_ptr_weak destructor for " << r1.name() << ". Shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
 					}
 				}
-			}
-			else {
-				if (SimpleMathApp::TestLog::TEST()) {
-					const std::type_info& r1 = typeid(T);					
-					SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "NULL/EXCESS Smart_ptr_weak destructor for " << r1.name() << "." << std::endl;
-				}
-			}
+			}			
 		}
 
 		//Метод возвращает true, если smart_ptr_weak ни на что не указывает.
@@ -92,6 +73,10 @@ namespace MemoryControl {
 		//Перенаправление вида (Т*)-> 
 		T* operator->()
 		{			
+			return (s_ref == nullptr) ? nullptr : ((T*)((int8_t*)MemPool()->block + (this->s_ref->shift())));
+		}
+		T* operator->() const
+		{
 			return (s_ref == nullptr) ? nullptr : ((T*)((int8_t*)MemPool()->block + (this->s_ref->shift())));
 		}
 		//Перенаправление вида *(Т*)
@@ -111,29 +96,21 @@ namespace MemoryControl {
 				return *this; //Проверка равентсва по адресу.
 			if (!this->is_nullptr()) {
 				if (s_ref->ref_count() > 1) {
-					s_ref->ref_count()--;
-					/*if (SimpleMathApp::TestLog::TEST()) {
-						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
-						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Old shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count();
-					}*/
+					s_ref->ref_count()--;					
 				}
 				else if (s_ref->ref_count() == 1) {
 					T* ptr = (T*)((int8_t*)MemPool()->block + (this->s_ref->shift()));
 					s_ref->ref_count()--;
 					ptr->~T();					
-					/*if (SimpleMathApp::TestLog::TEST()) {
+					if (SimpleMathApp::TestLog::TEST()) {
 						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
 						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Old shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". (Dest)Reference count: " << s_ref->ref_count();
-					}*/
+					}
 				}
 			}
 			this->s_ref = _right.s_ref;
 			if (this->is_nullptr()) return *this;
-			this->s_ref->ref_count()++;
-			/*if (SimpleMathApp::TestLog::TEST()) {
-				void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
-				SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "New shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
-			}	*/		
+			this->s_ref->ref_count()++;				
 			return *this;
 		}
 		
@@ -247,48 +224,28 @@ namespace MemoryControl {
 		}
 		//Оператор присваивания. Уменьшает счётчик ссылок для левостороннего объекта (вызывается деструктор при достижении нуля) и увеличивает счётчик для правостороннего объекта.
 		smart_ptr_strong<T>& operator=(const smart_ptr_strong<T>& _right)
-		{
-			if (SimpleMathApp::TestLog::TEST()) {
-				const std::type_info& r1 = typeid(T);
-				SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Call smart_ptr_strong::operator= for " << r1.name() << ". ";
-			}
+		{			
 			if (this == &_right)
 				return *this; //Проверка равентсва по адресу.
 			if (!this->is_nullptr()) {
 				if (s_ref->ref_count() > 1) {
-					s_ref->ref_count()--;
-					if (SimpleMathApp::TestLog::TEST()) {
-						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
-						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Old shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
-					}
+					s_ref->ref_count()--;					
 				}
 				else if (s_ref->ref_count() == 1) {
 					T* ptr = (T*)((int8_t*)MemPool()->block + (this->s_ref->shift()));
 					s_ref->ref_count()--;
-					ptr->~T();					
-					if (SimpleMathApp::TestLog::TEST()) {
-						void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
-						SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Old shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". (Dest)Reference count: " << s_ref->ref_count() << std::endl;
-					}
+					ptr->~T();
 				}
 			}
 			this->s_ref = _right.s_ref;
 			if (this->is_nullptr()) return *this;
-			this->s_ref->ref_count()++;
-			if (SimpleMathApp::TestLog::TEST()) {
-				void *temp_ptr = (void*)((int8_t*)MemPool()->block + (s_ref->shift()));
-				SimpleMathApp::TestLog::LOG_STREAM() << "New shift is: " << s_ref->shift() << ". Real pointer is: " << temp_ptr << ". Reference count: " << s_ref->ref_count() << std::endl;
-			}
+			this->s_ref->ref_count()++;			
 			return *this;
 		}
 
 		
 
-		operator smart_ptr_weak<T>() {
-			if (SimpleMathApp::TestLog::TEST()) {
-				const std::type_info& r1 = typeid(T);
-				SimpleMathApp::TestLog::LOG_STREAM() << std::endl << "Call smart_ptr_strong::operator smart_ptr_weak() for " << r1.name() << ". ";
-			}
+		operator smart_ptr_weak<T>() {			
 			if (this->is_nullptr()) return smart_ptr_weak<T>();
 			T obj = *((T*)((int8_t*)MemPool()->block + (this->s_ref->shift())));
 			return smart_ptr_weak<T>(obj);

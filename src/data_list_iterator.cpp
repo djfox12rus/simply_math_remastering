@@ -46,6 +46,16 @@ std::wstring SimpleMathApp::data_list::iterator::get_out()
 	return this->letter.is_nullptr() ? std::wstring() : this->letter->out;
 }
 
+SimpleMathApp::Core::tree_ptr SimpleMathApp::data_list::iterator::get_obj()
+{
+	return letter->object;
+}
+
+void SimpleMathApp::data_list::iterator::set_obj(Core::math_obj * _obj)
+{
+	letter->object = Core::tree_ptr(_obj);
+}
+
 int SimpleMathApp::data_list::iterator::compare_in(std::wstring & _original)
 {
 	return (this->letter.is_nullptr())? -1 : this->letter->compare_in(_original);
@@ -66,6 +76,7 @@ SimpleMathApp::data_list::iterator  SimpleMathApp::data_list::iterator::emplace_
 		this_data_list->top_bit = next_bit->left;
 	}
 	this_data_list->length++;	
+	letter->right->build_handler();
 	return iterator(letter->right, this->this_data_list);
 }
 
@@ -111,6 +122,11 @@ SimpleMathApp::data_list::iterator & SimpleMathApp::data_list::iterator::operato
 }
 
 SimpleMathApp::data_list::_data_bit * SimpleMathApp::data_list::iterator::operator->()
+{
+	return letter.operator->();
+}
+
+SimpleMathApp::data_list::_data_bit * SimpleMathApp::data_list::iterator::operator->() const
 {
 	return letter.operator->();
 }

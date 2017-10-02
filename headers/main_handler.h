@@ -2,8 +2,6 @@
 #ifndef MAIN_HANDLER_H
 #define MAIN_HANDLER_H
 
-#include"common.h"
-#include "MemWiz.h"
 #include "smart_ptr.h"
 #include "data_list.h"
 #include "console_compiler.h"

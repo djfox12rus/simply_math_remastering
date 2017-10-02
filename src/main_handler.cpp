@@ -8,24 +8,22 @@
 int SimpleMathApp::testing_ground()
 {
 	using namespace MemoryControl;
-	/*smart_ptr_weak<double> ptr1;
-	ptr1.place(7.54);
-	smart_ptr_strong<double> ptr2 = smart_ptr_strong<double>(4.658);
-	smart_ptr_weak<double>ptr3 = smart_ptr_weak<double>(ptr2);*/	
+	std::wstring str = L"1";
+	MathData()->push_back(str);
+	str = L"2";
+	MathData()->push_back(str);
+	str = L"3";
+	MathData()->push_back(str);
+	data_iterator it = MathData()->before_begin();
+	//it++;
+	MathData()->delete_after(it);
+	size_t check = MathData()->size();
 
-	/*std::wstring a = L"testing1";
-	std::wstring b = L"testing2";
-	std::wstring d = L"test";
+	MathData()->push_back(str);
+	MathData()->push_back(str);
+	it = MathData()->top();
 
-
-	data_list data;
-	data.push_back(a);
-	data.push_back(b);
-	TODO:заставить работать итераторы!!!
-	data_iterator it = data.top();
-	data_iterator it2 = it.emplace_after(d);
-	std::wstring str = it.get_in();
-	str = it2.get_in();*/
+	check = MathData()->size();
 
 	return 0;
 }
@@ -46,11 +44,15 @@ int SimpleMathApp::main_handler() {
 	}
 	catch (std::bad_alloc err) {
 		std::cout << "Bad alloc" << std::endl;
-		SimpleMathApp::TestLog::SaveLogFile();
+		if (SimpleMathApp::TestLog::TEST()) {
+			SimpleMathApp::TestLog::SaveLogFile();
+		}
 		return -1;
 	}
 	catch (...) {
-		SimpleMathApp::TestLog::SaveLogFile();
+		if (SimpleMathApp::TestLog::TEST()) {
+			SimpleMathApp::TestLog::SaveLogFile();
+		}
 		return -1;
 	}	
 
@@ -58,19 +60,33 @@ int SimpleMathApp::main_handler() {
 		SimpleMathApp::InitializeMathData();//список данных
 	}
 	catch (...) {
-		SimpleMathApp::TestLog::SaveLogFile();
+		if (SimpleMathApp::TestLog::TEST()) {
+			SimpleMathApp::TestLog::SaveLogFile();
+		}
 		return -1;
 	}
 
+
+	//SimpleMathApp::testing_ground();
 	if (NETEnvironment()) {
 		//вызов и работа с формой .NET
 	}
 	else {//работа в режиме "компилятора"
 		if (SimpleMathApp::ReadMathDatafromMudules()) {
 			std::cout <<"Could not read data from files. Check logs." << std::endl;
-			SimpleMathApp::TestLog::SaveLogFile();
+			if (SimpleMathApp::TestLog::TEST()) {
+				SimpleMathApp::TestLog::SaveLogFile();
+			}
 			return -1;
 		}
+		if (SimpleMathApp::ProcessMathData()) {
+			std::cout << "Could not read data from files. Check logs." << std::endl;
+			if (SimpleMathApp::TestLog::TEST()) {
+				SimpleMathApp::TestLog::SaveLogFile();
+			}
+			return -1;
+		}
+
 	}
 
 

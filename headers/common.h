@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <stack>
 #include <vector>
 //#include <wchar.h>
@@ -37,11 +38,11 @@ namespace SimpleMathApp {
 
 			base = 0,
 
-			number = 1,
+			real = 1,
 			complex = 2,
 			qwauterion = 3,
 
-			constant = 10,
+			constant_real = 10,
 			constant_cmplx = 11,
 
 			expression = 20,
@@ -65,6 +66,8 @@ namespace SimpleMathApp {
 			division = 64,
 			power = 65,
 		};
+		
+		std::wstring GetStrForTypeFlag(flags _type);
 	}
 }
 

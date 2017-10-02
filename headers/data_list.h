@@ -2,9 +2,9 @@
 #ifndef DATA_LIST_H
 #define DATA_LIST_H
 
-#include "common.h"
 #include "smart_ptr.h"
-
+#include"constant_expressions.h"
+#include"operations.h"
 
 namespace SimpleMathApp {
 	using namespace MemoryControl;
@@ -24,7 +24,10 @@ namespace SimpleMathApp {
 			smart_ptr_weak<_data_bit> right;
 			std::wstring in;
 			std::wstring out;			
-			//Core::tree_ptr object;			
+			Core::tree_ptr object;	
+
+			Core::leaf_ptr build_iternal(wchar_t*, wchar_t*);
+			Core::leaf_ptr build_tree(wchar_t*, wchar_t*, Core::leaf_ptr);
 			
 		public:
 			_data_bit();
@@ -32,6 +35,7 @@ namespace SimpleMathApp {
 			_data_bit(smart_ptr_weak<_data_bit>&);
 			_data_bit(smart_ptr_weak<_data_bit>&, smart_ptr_weak<_data_bit>&);
 			_data_bit(smart_ptr_weak<_data_bit>&, smart_ptr_weak<_data_bit>&, std::wstring&);
+			_data_bit(smart_ptr_weak<_data_bit>&, smart_ptr_weak<_data_bit>&, std::wstring&, Core::tree_ptr&);
 			_data_bit(const _data_bit&);
 			~_data_bit();
 
@@ -54,6 +58,8 @@ namespace SimpleMathApp {
 			std::wstring get_out();
 
 			int build_handler();
+
+			std::wstring get_obj_formal_entry();
 
 		};
 
@@ -88,8 +94,8 @@ namespace SimpleMathApp {
 			void set_out(std::wstring&);
 			std::wstring get_out();
 
-			/*Core::tree_ptr get_obj();
-			void assing_obj(Core::math_obj * _obj);*/
+			Core::tree_ptr get_obj();
+			void set_obj(Core::math_obj * _obj);
 
 			int compare_in(std::wstring&original);
 			int compare_out(std::wstring&original);
@@ -107,6 +113,7 @@ namespace SimpleMathApp {
 			//префиксный
 			iterator &operator-- ();
 			_data_bit* operator->();
+			_data_bit* operator->() const;
 
 			friend bool operator== (const iterator& _left, const iterator& _right);
 			friend bool operator!= (const iterator& _left, const iterator& _right);
@@ -121,6 +128,8 @@ namespace SimpleMathApp {
 		size_t size();
 		void push_back(std::wstring&);
 		void push_left(/*Core::tree_ptr&*/);
+		void delete_after(const iterator&);
+
 		
 
 		iterator before_begin();

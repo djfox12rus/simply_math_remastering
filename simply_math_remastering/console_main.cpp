@@ -7,7 +7,7 @@
 int main(/*std::string arg*/) {
 
 	//if (arg == "test")
-	SimpleMathApp::TestLog::SET_TEST();
+	//SimpleMathApp::TestLog::SET_TEST();
 	SimpleMathApp::InitializeNETfalse();
 
 	int not_good = SimpleMathApp::main_handler();	
